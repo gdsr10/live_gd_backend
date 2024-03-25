@@ -38,7 +38,23 @@ class CustomizeDesignOrderListSerializer(serializers.ModelSerializer):
 
 
 
-class CustomizeThemeDesignOrderListSerializer(serializers.ModelSerializer):
+class CustomizeThemeDesignWomensOrderListSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderList
-        fields = ['id', 'customername', 'order_type_name', 'order_type', 'material_name', 'size', 'bust', 'waist', 'hips', 'status']
+        fields = ['id', 'customername', 'price', 'order_type_name', 'order_type', 'material_name', 'gender', 'height', 'weight', 'neck', 'overbust', 'bust', 'underbust', 'waist', 'hips', 'nt2oh', 'nt2ok', 'tokta', 'sstw', 'sstn', 'tostw', 'ucfw', 'armhole', 'bicep', 'forearm', 'wristaround', 'inseam', 'outseam', 'shouldertos', 'status']
+
+
+
+class CustomizeThemeDesignMensOrderListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderList
+        fields = ['id', 'customername', 'price', 'order_type_name', 'order_type', 'material_name', 'gender', 'height', 'weight', 'neck', 'size', 'waist', 'hips', 'nt2oh', 'nt2ok', 'tokta', 'sstw', 'sstn', 'tostw', 'ucfw', 'armhole', 'bicep', 'forearm', 'wristaround', 'inseam', 'outseam', 'shouldertos', 'status']
+
+
+
+class CustomizeThemeDesignKidsOrderListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderList
+        fields = ['id', 'customername', 'price', 'order_type_name', 'order_type', 'material_name', 'gender', 'height', 'weight', 'size', 'waist', 'hips', 'armhole', 'inseam', 'outseam', 'status']
+
+

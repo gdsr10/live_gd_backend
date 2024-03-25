@@ -18,10 +18,10 @@ from django.contrib import admin
 from django.urls import path
 
 from api.views import Login, Register, ForgotPassword, ResetPassword, ItemList, ItemDetailsList
-from api.views import OnlineOrder, CustomizeDesignOrder, CustomizeThemeDesignOrder
+from api.views import OnlineOrder, CustomizeDesignOrder, CustomizeThemeDesignWomenOrder, CustomizeThemeDesignMenOrder, CustomizeThemeDesignKidOrder
 from api.views import PendingOrder, CancelOrder, ConfirmOrder
 from api.views import ConfirmViewOrder, CancelViewOrder
-
+from api.views import AdPendingOrder, AdConfirmViewOrder, AdCancelViewOrder
 
 urlpatterns = [
 
@@ -52,10 +52,19 @@ urlpatterns = [
     path('api/customizedesignorder/', CustomizeDesignOrder.CustomizeDesignOrderView.as_view()),
 
     # API to post/customizethemedesignorder Scheme
-    path('api/customizethemedesignorder/', CustomizeThemeDesignOrder.CustomizeThemeDesignOrderView.as_view()),
+    path('api/customizethemedesignorderwomen/', CustomizeThemeDesignWomenOrder.CustomizeThemeDesignWomenOrderView.as_view()),
+
+    # API to post/customizethemedesignorder Scheme
+    path('api/customizethemedesignordermen/', CustomizeThemeDesignMenOrder.CustomizeThemeDesignMenOrderView.as_view()),
+
+    # API to post/customizethemedesignorder Scheme
+    path('api/customizethemedesignorderkid/', CustomizeThemeDesignKidOrder.CustomizeThemeDesignKidOrderView.as_view()),
 
     # API to post/pendingorder Scheme
     path('api/pendingorder/', PendingOrder.PendingOrderview.as_view()),
+
+    # API to post/pendingorder Scheme
+    path('api/adpendingorder/', AdPendingOrder.AdPendingOrderview.as_view()),
 
     # API to post/pendingorder Scheme
     path('api/cancelorder/', CancelOrder.CancelOrderview.as_view()),
@@ -67,6 +76,12 @@ urlpatterns = [
     path('api/confirmvieworder/', ConfirmViewOrder.ConfirmViewOrderview.as_view()),
 
     # API to post/confirmorder Scheme
+    path('api/adconfirmvieworder/', AdConfirmViewOrder.AdConfirmViewOrderview.as_view()),
+
+    # API to post/confirmorder Scheme
     path('api/cancelvieworder/', CancelViewOrder.CancelViewOrderview.as_view()),
+
+    # API to post/confirmorder Scheme
+    path('api/adcancelvieworder/', AdCancelViewOrder.AdCancelViewOrderview.as_view()),
 
 ]
